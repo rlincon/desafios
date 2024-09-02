@@ -11,6 +11,11 @@ body{
     margin-left: 480px;
 }
 
+.botoes{
+    display: inline;
+    margin-left: 480px;
+}
+
 .links a{
     margin-left: 15px;
     text-decoration: none;
@@ -26,11 +31,12 @@ body{
 }
 
 .link-a-1{
-    background-color: #bb09ac;
+    background-color: #ec37c7;
     border: #e605d3 solid 2px;
     color: white;
     font-weight: bold;
-    padding: 10px;
+    padding: 15px;
+    margin: 5px;
 }
 
 .link-a-2{
@@ -54,21 +60,38 @@ body{
     color: #e605d3;
 }
 
+footer {
+	text-align: center;
+    font-weight: bold;
+	background-color: rgb(222, 222, 217);
+    width: 100%;
+    margin: 50px 0 0 0;
+    padding: 40px;
+}
+
+.texto{
+    text-align: justify;
+    columns: 3;
+    font-weight: bold;
+    margin:50px;
+}
+
 .secao-1{
-    width: 500px;
-    margin-left: 50px;
-    margin-top: 50px;
-    padding: 10px;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+    padding: 5px;
 }
 
 .secao-2{
-    width: 500px;
+    width: 100%;
     margin-top:50px ;
     margin-bottom: 100px;
 }
 
 .secao-3{
-    width: 500px;
+    width: 100%;
+
     margin-left: 50px;
     margin-top: 50px;
 }
@@ -93,7 +116,7 @@ img{
     margin: 0 auto;
 }
 .img img{
-    width: 70%;
+    width: 33%;
     border-radius: 100%;
 }
 
@@ -106,6 +129,16 @@ h2{
     padding: 10px;
 }
 
+h1{
+    text-align: center;
+    padding: 15px;
+}
+
+h3{
+    text-align: center;
+    font-size: 50px;
+}
+
 .campobox{
     width: 33%;
 }
@@ -114,6 +147,13 @@ h2{
     padding: 20px;
 }
 
-.btn{
-    
+button{
+    padding: 20px;
+    margin-left: 40px;
 }
+
+.btn btn-info{
+    size: 50px;
+}
+
+

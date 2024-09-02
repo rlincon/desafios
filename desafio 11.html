@@ -1,41 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BHASKARA</title>
+    <title>Grid Fluido</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax (200px, 1fr));
+            gap: 10px;
+        }
+
+        .item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 
-<style>
-    h1, h2, h3 { font-family: 'Pacifico' ,cursive; font-weight: bolder ; font-size: 45px;}
-    p {font-family: 'Pacifico' ,cursive; font-weight: bolder ; font-size: 15px;}
-</style>
-
 <body>
-    <h1>Encontre o valor de DELTA: </h1>
-    <button onclick="bhaskara()">Calcular valor de Delta!</button>
-
-    <section id="situacao">
-        <p></p>
-    </section>
-
-    <script>
-        var jogahtml = window.document.getElementById('situacao')
-
-        function bhaskara() {
-            var a = Number(window.prompt('Qual valor de a: '))
-            var b = Number(window.prompt('Qual valor de b: '))
-            var c = Number(window.prompt('Qual valor de c: '))
-           
-            resultdelta =(b*b-4*a*c) 
-        
-            jogahtml.innerHTML = `<p>A equação solicitada foi <mark>${a}x²+${b}x+${c}</mark> </p>`
-            jogahtml.innerHTML += `<p> O valor de Delta será calculado da seguinte forma: <mark> Δ=${b}²-4*${a}*${c} </mark></p>`
-            jogahtml.innerHTML += `<p> O valor de Δ será de: <mark> ${resultdelta}</mark></p>`
-            jogahtml.innerHTML += `<p> Valor de a=${a} | valor de b=${b} | valor de c=${c} </p>`  
-        }
-    </script>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+    </div>
 </body>
 
 </html>

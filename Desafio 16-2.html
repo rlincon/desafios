@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Cadastro</title>
+
+    <!-- <style>
+        label{font-family: 'Pacifico' ,cursive; font-weight: bolder ; font-size: 15px; padding: 15px;}
+        button{font-family: 'Pacifico' ,cursive; font-weight: bolder ; font-size: 15px; padding: 10px;margin: 25px;}
+        .input-padrao {display: inline;margin: 10px 20px; padding: 10px 25px; width: 50%;::-webkit-inner-spin-button {-webkit-appearance: none;}}
+        
+    </style> -->
+
+</head>
+<body>
+    <h1>Formulário de Cadastro</h1>
+    <form id="cadastroForm">
+        <label for="nome">Nome    :</label>
+        <input type="text" id="nome" name="nome" class="input-padrao" required><br>
+        <label for="endereco">Endereço:</label> 
+        <input type="text" id="endereco" name="endereco" class="input-padrao" required><br>
+        <label for="telefone">Telefone:</label> 
+        <input type="fone"  id="telefone" class="input-padrao" name="telefone" required><br>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <script>
+    
+    const form = document.getElementById('cadastroForm');
+
+    form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    const nome = document.getElementById('nome').value;
+    const endereco = document.getElementById('endereco').value;
+    const telefone = document.getElementById('telefone').value;
+
+
+    // Aqui você pode adicionar a lógica para enviar os dados para um servidor, banco de dados, etc.
+
+   // const formulario = document.getElementById('meuFormulario');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Impede o envio padrão do formulário
+    
+      const dados = new FormData(form);
+    
+      fetch('salvar_dados.php', {
+        method: 'POST',
+        body: dados
+      })
+      .then(response => response.text("DADOS GRAVADOS COM SUCESSO"))
+      .then(data => {
+        console.log(data); // Exibe a resposta do servidor
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+      });
+    });
+
+    // Por enquanto, vamos apenas exibir uma mensagem de sucesso
+
+    const mensagem = document.getElementById('mensagem');
+    mensagem.textContent = `Cadastro realizado com sucesso! Nome: ${nome}, Endereço: ${endereco}, Telefone: ${telefone}`;
+});
+    </script>
+</body>
+</html>

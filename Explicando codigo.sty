@@ -1,0 +1,35 @@
+Entendendo o Código: 
+
+form.addEventListener('submit',(event) => {event.preventDefault();
+
+form.addEventListener('submit', ...):
+    Essa linha adiciona um "ouvinte" (listener) ao elemento HTML com o nome "form".
+    Esse ouvinte fica "esperando" por um evento específico: o evento de "submit" (envio) do formulário.
+    Quando o usuário clica no botão "Enviar" do formulário ou pressiona Enter dentro de um campo de input, esse evento é disparado.
+
+    
+(event) => { ... }:
+    Essa parte define uma função anônima que será executada quando o evento "submit" ocorrer.
+    O parâmetro event representa o próprio evento que foi disparado. Ele contém informações sobre o evento, 
+        como o elemento que o originou e o tipo de evento.
+
+
+event.preventDefault();:
+    Dentro da função, essa linha é a chave para entender o comportamento do código.
+    Quando um formulário é enviado normalmente, ele recarrega a página.
+    A função preventDefault() serve para impedir esse comportamento padrão.
+    Ao chamar essa função, você está dizendo ao navegador: "Ei, quando esse formulário for enviado, não recarregue a página!".
+
+
+Ou seja:
+
+    Esse código faz com que, quando o usuário tentar enviar o formulário, a ação padrão de recarregar a página seja cancelada. 
+        Isso é muito útil quando você quer realizar alguma ação personalizada após o envio do formulário, como:
+
+    Validar os dados: Antes de enviar os dados para um servidor, você pode verificar se todos os campos foram preenchidos corretamente.
+    Enviar os dados de forma assíncrona: Em vez de recarregar a página, 
+        você pode usar JavaScript para enviar os dados para um servidor e atualizar a página com a resposta do servidor.
+    Mostrar uma mensagem de confirmação: Você pode exibir uma mensagem para o usuário informando que o formulário foi enviado com sucesso.
+    
+Em poucas palavras, esse código dá mais controle sobre o comportamento do formulário, 
+    permitindo que você crie interações mais dinâmicas e personalizadas em suas páginas web.
